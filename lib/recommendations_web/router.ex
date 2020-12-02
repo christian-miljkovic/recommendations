@@ -14,9 +14,13 @@ defmodule RecommendationsWeb.Router do
   end
 
   scope "/", RecommendationsWeb do
-    pipe_through :browser
+    pipe_through :api
 
     get "/", PageController, :index
+
+    scope "/recommendations" do
+      resources "/", RecommendationController, only: [:index, :create]
+    end
   end
 
   # Other scopes may use custom stacks.
