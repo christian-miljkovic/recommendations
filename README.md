@@ -2,8 +2,8 @@
 
 ### To-do
 
-- Create route to save response to database (controller)
-- Create ecto logic to save responses (model)
+- Create validator module that uses changeset logic already in lib/rec
+- Add create_rec logic by inserting into Repo
 - Return response to twilio
 
 To start your Phoenix server:
@@ -15,6 +15,11 @@ To start your Phoenix server:
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+
+# Setting up DB
+
+1. `mix phx.gen.schema User users name:string email:string` (example with User)
+2. `mix ecto.migrate`
 
 ## Learn more
 
