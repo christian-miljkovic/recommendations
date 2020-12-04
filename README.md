@@ -1,9 +1,9 @@
 # Recommendations
 
 ### To-do
-
-- Create validator module that uses changeset logic already in lib/rec
-- Add create_rec logic by inserting into Repo
+- Create a schema module (check schemas in digits + context in phx docs)
+- Create validator module for params that come in from a request
+- Add create_recommendation logic by inserting into Repo
 - Return response to twilio
 
 To start your Phoenix server:
