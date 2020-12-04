@@ -1,20 +1,15 @@
 defmodule Recommendations.Recommendation do
-  use Ecto.Schema
-  import Ecto.Changeset
+  import Ecto.Query, warn: false
+  alias Recommendations.Repo
 
-  @type t :: %__MODULE__{}
+  alias Recommendations.Scehma.Recommendation
 
-  embedded_schema do
-    field :client_id, Ecto.UUID
-    field :message, :string
-
-    timestamps()
+  def list_recommendations do
+    Repo.all(Recommendation)
   end
 
-  @doc false
-  def changeset(params) do
-    %__MODULE__{}
-    |> cast(params, [:client_id, :message])
-    |> validate_required([:client_id, :message])
+  def create_recommendation(attrs \\ %{}) do
+    Recommendation.changeset(attrs)
+    |> Repo.insert()
   end
 end
