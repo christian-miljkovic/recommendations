@@ -1,10 +1,8 @@
-defmodule Recommendations.Scehma.Recommendation do
+defmodule Recommendations.Schema.Recommendation do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @type t :: %__MODULE__{}
-
-  embedded_schema do
+  schema "recommendations" do
     field :client_id, Ecto.UUID
     field :message, :string
 
@@ -12,9 +10,9 @@ defmodule Recommendations.Scehma.Recommendation do
   end
 
   @doc false
-  def changeset(params) do
+  def changeset(attrs) do
     %__MODULE__{}
-    |> cast(params, [:client_id, :message])
+    |> cast(attrs, [:client_id, :message])
     |> validate_required([:client_id, :message])
   end
 end

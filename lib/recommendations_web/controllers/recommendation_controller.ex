@@ -15,7 +15,8 @@ defmodule RecommendationsWeb.RecommendationController do
 
   def create(conn, params) do
     with {:ok, validated_params} <- RecommendationParams.cast_and_validate(params),
-         {:ok, recommendation} <- Recommendation.create_recommendation(validated_params) do
+         {:ok, recommendation} <-
+           Recommendation.create_recommendation(Map.from_struct(validated_params)) do
       conn
       |> put_status(202)
       |> put_view(RecommendationView)

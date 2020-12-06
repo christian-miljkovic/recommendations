@@ -6,8 +6,7 @@ defmodule RecommendationsWeb.Views.RecommendationView do
 
   def render("show.json", %{recommendation: recommendation}) do
     %{
-      data:
-        render_one(recommendation, RecommendationView, "recommendation.json", as: recommendation)
+      data: render_one(recommendation, RecommendationView, "recommendation.json")
     }
   end
 
