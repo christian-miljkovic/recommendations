@@ -24,6 +24,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ### Deploying
 
+1. `git add & git commit & git push origin head`
+2. `git push heroku main`
+
 - Official Elixir Docs: https://hexdocs.pm/phoenix/heroku.html#content
 
 ## Learn more

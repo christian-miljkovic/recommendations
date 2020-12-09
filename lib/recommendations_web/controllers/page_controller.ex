@@ -2,6 +2,8 @@ defmodule RecommendationsWeb.PageController do
   use RecommendationsWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    conn
+    |> put_status(202)
+    |> text(":)")
   end
 end
